@@ -6,7 +6,8 @@ We had a simple approach . here is the basic diagram
 
 ![image](https://user-images.githubusercontent.com/22366914/116205078-f7785900-a76f-11eb-81f8-682f29d0b7b3.png)
 
-First of All I would like to thank @ammarali32 and @ttahara for the starting points and notebooks. @ttahara your model in CV scored 0.9767 LB 0.972 (which is our best single) and Staged training proposed by @hengck23 and kernel provided by @yasufuminakama and followed by finetuning with multiple datasets
+First of All I would like to thank @ammarali32 and @ttahara for the starting points and notebooks. 
+@ttahara your model in CV scored 0.9767 LB 0.972 (which is our best single) and Staged training proposed by @hengck23 and kernel provided by @yasufuminakama and followed by finetuning with multiple datasets
 
 ## CV strategy
 we all had had almost different CV split but same algorithm. as proposed by @underwearfitting
@@ -26,9 +27,12 @@ We basically used 3 backbones with 4 heads( but only 2 of them were experimented
 
 # Our Strategy
 We Started with the idea proposed by @hengck23 and @ttahara as starting.
+
 We train the model as 3 stages as @hengck23. When we trained Resnet200d with GeM with soft label(which is created by stage 3 model) on our competition set itself ( we thought it as same as knowledge distillation). and pretrain the model. this model showed us a CV: 0.97 and LB: wasn't tested. We found this soft labelling helps a lot. And we continue to do this on NIH , PadChest , VinBigData external dataset.
-doing this CV: 0.971/ PublicLB: 0.970/ PrivateLB: 0.971 for 3 staged model
-and CV: 0.9767/PublicLB: 0.970/ PrivateLB: 0.972 for Multi Head Attention
+
+* CV: 0.971 / PublicLB: 0.970 / PrivateLB: 0.971 for 3 staged model
+* CV: 0.977 / PublicLB: 0.970 / PrivateLB: 0.972 for Multi Head Attention
+
 We first soft labelled only NIH and pretrained and finetuned and then PadChest pretrained and finetuned. We trained every staged model into 5 folds and only 1 fold for Multi Stage. We also used @ammarali32 's public high scoring weights and pretrained and finetuned to give into the ensemble.
 
 # Ensembling
