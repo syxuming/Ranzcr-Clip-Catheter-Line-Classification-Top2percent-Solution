@@ -15,14 +15,14 @@ we all had had almost different CV split but same algorithm. as proposed by @und
 We basically used 3 backbones with 4 heads( but only 2 of them were experimented) into submission:
 
 ### Backbones
---. Resnet200d
---. EfficientNetB7
--- Resnet50d
+* Resnet200d
+* EfficientNetB7
+* Resnet50d
 ### Head
--- Multi head Attention
--- GeM
--- Simple Global Pooling
--- AdaptiveConcatPooling
+* Multi head Attention
+* GeM
+* Simple Global Pooling
+* AdaptiveConcatPooling
 
 # Our Strategy
 We Started with the idea proposed by @hengck23 and @ttahara as starting.
