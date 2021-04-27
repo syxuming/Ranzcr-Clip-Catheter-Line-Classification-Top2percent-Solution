@@ -1,0 +1,18 @@
+1.官方数据集
+https://www.kaggle.com/c/ranzcr-clip-catheter-line-classification/data
+
+2.外部数据集1-12 （NIH）
+https://www.kaggle.com/nih-chest-xrays/data
+
+
+3.外部数据集13-14（padchest和chest x ray）
+images_013_014_4.zip
+（见百度网盘 - 外部数据集 文件夹）
+
+
+4.其他数据集
+dublicated entry from RANZCR and NIH.csv
+fix_mistake0227.csv
+nih_filepath.csv
+softlabeljason.csv
+（见百度网盘 - 代码 文件夹）
