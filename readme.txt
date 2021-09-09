@@ -14,7 +14,7 @@ lr=1e-4
 STAGE2:  
 将stage1的输出模型作为teacher模型，得到模型2。
 自定义loss
-1.由teacher对有颜色标注导管的图片进行softlabel指导。 
+1.由teacher对有颜色标注导管的图片进行features指导。 
 2.用BCE对全部图片和groudtruth训练。
 epoch：14
 img_size:640
