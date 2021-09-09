@@ -1,4 +1,4 @@
-# Ranzcr-clip-catheter-line-classification
+# Ranzcr-Clip-Catheter-Line-Classification
 ranzcr-clip-catheter-line-classification silver solution
 
 # TLDR
