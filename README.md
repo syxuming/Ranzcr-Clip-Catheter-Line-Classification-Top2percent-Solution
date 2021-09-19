@@ -21,9 +21,8 @@ We basically used 3 backbones with 4 heads( but only 2 of them were experimented
 * Resnet50d
 ### Head
 * Multi head Attention
-* GeM
 * Simple Global Pooling
-* AdaptiveConcatPooling
+
 
 # Our Strategy
 We Started with the idea proposed by @hengck23 and @ttahara as starting.
@@ -97,9 +96,7 @@ ranzcr-clip-catheter-line-classification 银牌解决方案
 * Resnet50d
 ### Head
 * Multi head Attention
-* GeM
 * Simple Global Pooling
-* AdaptiveConcatPooling
 
 # 我们的策略
 我们以@hengck23和@ttahara提出的想法为起点。
