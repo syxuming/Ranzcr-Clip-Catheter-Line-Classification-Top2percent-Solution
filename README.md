@@ -13,15 +13,12 @@ First of All I would like to thank @ammarali32 and @ttahara for the starting poi
 we all had had almost different CV split but same algorithm. as proposed by @underwearfitting
 
 # Models
-We basically used 3 backbones with 4 heads( but only 2 of them were experimented) into submission:
+We basically used 3 model acrh into submission:
 
 ### Backbones
 * Resnet200d
 * EfficientNetB7
-* Resnet50d
-### Head
-* Multi head Attention
-* Simple Global Pooling
+* Resnet200d - Multi head Attention
 
 
 # Our Strategy
@@ -88,15 +85,12 @@ ranzcr-clip-catheter-line-classification 银牌解决方案
 我们队伍中CV结果不同，但CV的策略算法是一样的，正如 @underwearfitting
 
 # Models
-我们基本上使用了 3个骨干网络带上4个分类头(但只实验了其中两个) 来提交:
+我们用了3种网络结构
 
 ### Backbones
 * Resnet200d
 * EfficientNetB7
-* Resnet50d
-### Head
-* Multi head Attention
-* Simple Global Pooling
+* Resnet200d - Multi head Attention
 
 # 我们的策略
 我们以@hengck23和@ttahara提出的想法为起点。
