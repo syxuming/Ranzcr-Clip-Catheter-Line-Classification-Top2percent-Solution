@@ -1,5 +1,4 @@
 # Ranzcr-Clip-Catheter-Line-Classification
-ranzcr-clip-catheter-line-classification silver solution
 
 ![header](https://user-images.githubusercontent.com/22366914/143532781-0a6cc34a-07f6-4881-8493-64be83e6eaa1.png)
 https://www.kaggle.com/c/ranzcr-clip-catheter-line-classification
