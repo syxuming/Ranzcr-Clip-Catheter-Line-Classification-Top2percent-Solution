@@ -1,7 +1,10 @@
 # Ranzcr-Clip-Catheter-Line-Classification
 ranzcr-clip-catheter-line-classification silver solution
 
-# TLDR
+![header](https://user-images.githubusercontent.com/22366914/143532781-0a6cc34a-07f6-4881-8493-64be83e6eaa1.png)
+https://www.kaggle.com/c/ranzcr-clip-catheter-line-classification
+
+## TLDR
 We had a simple approach . here is the basic diagram
 
 ![image](https://user-images.githubusercontent.com/22366914/116205078-f7785900-a76f-11eb-81f8-682f29d0b7b3.png)
@@ -9,10 +12,10 @@ We had a simple approach . here is the basic diagram
 First of All I would like to thank @ammarali32 and @ttahara for the starting points and notebooks. 
 @ttahara your model in CV scored 0.9767 LB 0.972 (which is our best single) and Staged training proposed by @hengck23 and kernel provided by @yasufuminakama and followed by finetuning with multiple datasets
 
-## CV strategy
+### CV strategy
 we all had had almost different CV split but same algorithm. as proposed by @underwearfitting
 
-# Models
+## Models
 We basically used 3 model acrh into submission:
 
 ### Backbones
@@ -21,7 +24,7 @@ We basically used 3 model acrh into submission:
 * Resnet200d - Multi head Attention
 
 
-# Our Strategy
+## Our Strategy
 We Started with the idea proposed by @hengck23 and @ttahara as starting.
 
 We train the model as 3 stages as @hengck23. When we trained Resnet200d with GeM with soft label(which is created by stage 3 model) on our competition set itself ( we thought it as same as knowledge distillation). and pretrain the model. this model showed us a CV: 0.97 and LB: wasn't tested. We found this soft labelling helps a lot. And we continue to do this on NIH , PadChest , VinBigData external dataset.
@@ -31,10 +34,9 @@ We train the model as 3 stages as @hengck23. When we trained Resnet200d with GeM
 
 We first soft labelled only NIH and pretrained and finetuned and then PadChest pretrained and finetuned. We trained every staged model into 5 folds and only 1 fold for Multi Stage. We also used @ammarali32 's public high scoring weights and pretrained and finetuned to give into the ensemble.
 
-# Ensembling
+## Ensembling
 We used simple averaging
 
-# Other Points
 ## Augmentation
 ```
 RandomResizedCrop(CFG.img_size, CFG.img_size, scale=(0.9, 1), p=1), 
@@ -73,7 +75,7 @@ Thanks to All we learned a lot Team HotWater
 # ranzcr-clip-catheter-line-classification
 ranzcr-clip-catheter-line-classification 银牌解决方案
 
-# 简介
+## 简介
 我们有一个简单的方法。以下是基本的图示
 
 ![image](https://user-images.githubusercontent.com/22366914/116205078-f7785900-a76f-11eb-81f8-682f29d0b7b3.png)
@@ -81,10 +83,10 @@ ranzcr-clip-catheter-line-classification 银牌解决方案
 首先我要感谢@ammarali32和@ttahara提供的baseline和notebook。
 @ttahara 你的模型在CV中的得分是0.9767 LB 0.972（这是我们最好的单模型），@hengck23提出的分阶段训练和@yasufuminakama提供的kernel，然后用多个数据集进行微调
 
-## CV 策略
+### CV 策略
 我们队伍中CV结果不同，但CV的策略算法是一样的，正如 @underwearfitting
 
-# Models
+## Models
 我们用了3种网络结构
 
 ### Backbones
@@ -92,7 +94,7 @@ ranzcr-clip-catheter-line-classification 银牌解决方案
 * EfficientNetB7
 * Resnet200d - Multi head Attention
 
-# 我们的策略
+## 我们的策略
 我们以@hengck23和@ttahara提出的想法为起点。
 
 我们像@hengck23一样将模型训练成3个阶段。当我们用GeM训练Resnet200d时，用软标签（由第三阶段的模型创建）对我们的竞争集本身进行训练（我们认为这与知识蒸馏相同），并预训练模型。我们发现这种软标记有很大的帮助。我们继续在NIH , PadChest , VinBigData的外部数据集上做这个工作。
@@ -102,10 +104,9 @@ ranzcr-clip-catheter-line-classification 银牌解决方案
 * 
 我们首先只对NIH进行软标记，并进行预训练和微调，然后对PadChest进行预训练和微调。我们将每个阶段的模型训练成5个折叠，多阶段的模型只训练1个折叠。我们还使用了@ammarali32的公共高分权重，并进行了预训练和微调，将其纳入合集。
 
-# Ensembling
+## Ensembling
 平均
 
-# Other Points
 ## 数据增强
 ```
 RandomResizedCrop(CFG.img_size, CFG.img_size, scale=(0.9, 1), p=1), 
@@ -135,6 +136,10 @@ Neptune.ai
 * Multi Staged Ensembling（消耗太大）
 * Dynamic Temperature for pseudo labelling
 
+
 感谢@Philippsinger的文章，在他的文章中我学到了如何写解决方案的文章（因为这是我第一次写文章）。
 感谢所有的人，我们学到了很多东西 HotWater团队
 
+## TL;DR 
+
+RANZCR 举办的医疗影像竞赛，参赛者需要使用算法检测胸部 X 光片上导管和管路的存在和位置。使用机器学习在 40000 张图像上训练和测试参赛模型，对放置不良的导管进行分类，其中官方提供的一部分高亮标注数据。我们首先利用高亮标注数据的图片，训练出一个简单的模型，然后通过类似知识蒸馏的方式，将该模型的性能推广到全量数据，最后我们还利用了NIH的额外数据进行伪标签训练，得到最终的结果，所有环节中我们使用的模型均是EfficientnetB7和512尺寸的图片。
