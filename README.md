@@ -11,13 +11,13 @@ We had a simple approach . here is the basic diagram
 First of All I would like to thank @ammarali32 and @ttahara for the starting points and notebooks. 
 @ttahara your model in CV scored 0.9767 LB 0.972 (which is our best single) and Staged training proposed by @hengck23 and kernel provided by @yasufuminakama and followed by finetuning with multiple datasets
 
-### CV strategy
+#### CV strategy
 we all had had almost different CV split but same algorithm. as proposed by @underwearfitting
 
 ## Models
 We basically used 3 model acrh into submission:
 
-### Backbones
+#### Backbones
 * Resnet200d
 * EfficientNetB7
 * Resnet200d - Multi head Attention
@@ -56,12 +56,12 @@ Resize(CFG.img_size, CFG.img_size), OneOf([ JpegCompression(), Downscale(scale_m
 ## Logging: 
 Neptune.ai
 
-# Things we didn't had time to do
+## Things we didn't had time to do
 * Segmentation based learning ( that made us apart from other top candidates)
 * Retrieval based learning
 * GeM Pooling and AdaptiveConcatPool ( we prepared didnt experimented )
 
-# Things didn't worked
+## Things didn't worked
 * Multi Staged Ensembling ( because it was hurting too much )
 * Dynamic Temperature for pseudo labelling
 
@@ -88,7 +88,7 @@ ranzcr-clip-catheter-line-classification 银牌解决方案
 ## Models
 我们用了3种网络结构
 
-### Backbones
+#### Backbones
 * Resnet200d
 * EfficientNetB7
 * Resnet200d - Multi head Attention
@@ -126,12 +126,12 @@ Resize(CFG.img_size, CFG.img_size), OneOf([ JpegCompression(), Downscale(scale_m
 ## Logging: 
 Neptune.ai
 
-# 没来得及做的事情
+## 没来得及做的事情
 * 基于细分的学习（这使我们从其他顶级候选人中脱颖而出
 * 基于检索的学习
 * GeM Pooling和AdaptiveConcatPool（我们准备好了，但没有实验）
 
-# 没成功的事情
+## 没成功的事情
 * Multi Staged Ensembling（消耗太大）
 * Dynamic Temperature for pseudo labelling
 
